@@ -65,8 +65,8 @@ You can configure Medusa in the commands you run like this :
 
 Use them like this:
 ```
-./medusa import secret ./test/data/import-example-1.yaml --address="https://0.0.0.0:8201" --token="00000000-0000-0000-0000-000000000000" --insecure
-./medusa export secret/A --address="https://0.0.0.0:8201" --token="00000000-0000-0000-0000-000000000000" --format="json" --insecure
+./medusa import secret-name ./test/data/import-example-1.yaml --address="https://0.0.0.0:8201" --token="00000000-0000-0000-0000-000000000000" --insecure
+./medusa export secret-name/A --address="https://0.0.0.0:8201" --token="00000000-0000-0000-0000-000000000000" --format="json" -m="engine-type" --insecure
 ```
 
 ### Importing secrets
@@ -89,7 +89,7 @@ Medusa import will take a [vault path] with [flags]
 
 Example:
 ```
-./medusa import secret ./test/data/import-example-1.yaml -a="https://0.0.0.0:8201" -t="00000000-0000-0000-0000-000000000000" --insecure
+./medusa import secret-name ./test/data/import-example-1.yaml -a="https://0.0.0.0:8201" -t="00000000-0000-0000-0000-000000000000" --insecure
 2020/12/11 13:23:59 Secret successfully written to Vault instance on path [/A/B/E]
 2020/12/11 13:23:59 Secret successfully written to Vault instance on path [/A/Xa/Z]
 2020/12/11 13:23:59 Secret successfully written to Vault instance on path [/A/F/G]
@@ -97,7 +97,7 @@ Example:
 2020/12/11 13:23:59 Secret successfully written to Vault instance on path [/A/B/C/D/Db]
 
 
-./medusa import secret/folder ./test/data/import-example-1.yaml -a="https://0.0.0.0:8201" -t="00000000-0000-0000-0000-000000000000" --insecure
+./medusa import secret-name/folder ./test/data/import-example-1.yaml -a="https://0.0.0.0:8201" -t="00000000-0000-0000-0000-000000000000" --insecure
 2020/12/11 13:25:03 Secret successfully written to Vault instance on path [folder/A/F/G]
 2020/12/11 13:25:03 Secret successfully written to Vault instance on path [folder/A/B/C/D]
 2020/12/11 13:25:03 Secret successfully written to Vault instance on path [folder/A/B/C/D/Db]
@@ -128,7 +128,7 @@ Medusa import will take a [vault path] with [flags]
 Example:
 
 ```
-./medusa export secret --address="https://0.0.0.0:8201" --token="00000000-0000-0000-0000-000000000000" --format="yaml" --insecure
+./medusa export-name secret --address="https://0.0.0.0:8201" --token="00000000-0000-0000-0000-000000000000" --format="yaml" --insecure
 A:
   B:
     C:
@@ -167,7 +167,7 @@ Medusa delete will take a [vault path] with [flags]
 
 Example:
 ```
-./medusa delete secret/production --address="https://0.0.0.0:8201" --token="00000000-0000-0000-0000-000000000000" --insecure
+./medusa delete secret-name/production --address="https://0.0.0.0:8201" --token="00000000-0000-0000-0000-000000000000" --insecure
 Deleting secret [secret/production/users/cart/database]
 Deleting secret [secret/production/users/cart/database/users/readuser]
 Deleting secret [secret/production/users/cart/database/users/writeuser]
@@ -177,7 +177,7 @@ Deleting secret [secret/production/users/user/database/users/readuser]
 The secrets has now been deleted
 
 
-./medusa delete secret/staging --address="https://0.0.0.0:8201" --token="00000000-0000-0000-0000-000000000000" --insecure --auto-approve
+./medusa delete secret-name/staging --address="https://0.0.0.0:8201" --token="00000000-0000-0000-0000-000000000000" --insecure --auto-approve
 Deleting secret [secret/staging/users/cart/database]
 Deleting secret [secret/staging/users/cart/database/users/readuser]
 Deleting secret [secret/staging/users/cart/database/users/writeuser]
